@@ -15,7 +15,7 @@ let maze = [
 
 let player = [0, 0]
 let bag = 0
-
+let win=true;
 const ROWS = 12
 const COLS = 12
 
@@ -66,10 +66,10 @@ const createBoard = () => {
 
 const renderMaze = () => {
     if (bag < DIAMOND_COUNT) {
-        document.querySelector('.info1').textContent = 'collect all the gems'
+        document.querySelector('.info1').textContent = 'COLLECT ALL OF THE GEMS'
     } else {
         maze[ROWS-1][COLS-1] = EXIT_READY
-        document.querySelector('.info1').textContent = 'go to the teleport'
+        document.querySelector('.info1').textContent = 'GO TO THE TELEPORT'
     }
 
     for (let row = 0; row < ROWS; row++) {
@@ -103,6 +103,10 @@ const renderMaze = () => {
     else {
         document.querySelector(id).className = 'block player bye'
         document.querySelector('.info1').textContent = 'bye!'
+        teleport.pause();
+        teleport.play();  
+        win = false;
+        winaleart();
     }
 
 
@@ -110,19 +114,31 @@ const renderMaze = () => {
 }
 
 window.onkeydown = (event) => {
+    if(!win){
+        return;
+    }
+    else{
     switch (event.keyCode) {
         case DOWN:
+            moveSound.pause();
+            moveSound.play();   
             direction = DOWN;  break
         case UP:
+            moveSound.pause();
+            moveSound.play();
             direction = UP; break;
         case LEFT:
+            moveSound.pause();
+            moveSound.play();
             direction = LEFT; break
         case RIGHT:
+            moveSound.pause();
+            moveSound.play();
             direction = RIGHT; break
         default:
             direction = 0
     }
-
+}
     if (direction !== 0) {
         changePlayerPos(direction)
     }
@@ -153,9 +169,59 @@ const changePlayerPos = (direction) => {
             if (maze[y][x] === DIAMOND) {
                 maze[y][x] = EMPTY
                 bag++
+                diamond_sound.pause();
+                diamond_sound.play();
+                
             }
             
             renderMaze()
         } 
 
 }
+let play = document.getElementById("play");
+let audio = new Audio('audio/song.mp3');
+let moveSound = new Audio('audio/move.mp3');
+let teleport = new Audio('audio/teleport.mp3');
+let diamond_sound=new Audio('audio/diamond.wav')
+moveSound.volume = 0.5;
+function playSong() {
+
+    audio.loop = true;
+    audio.volume = 0.3;
+    audio.play();
+    document.getElementById("play").style.display = "block";
+    document.getElementById("pause").style.display = "none";
+  }
+
+  function stopSong() {
+    audio.pause();
+    document.getElementById("play").style.display = "none";
+    document.getElementById("pause").style.display = "block";
+  }
+
+  function Sweetaleart() {
+    Swal.fire({
+        title: 'Credits',
+        toast: true,
+        text: 'Made by Simon Šulin!',
+        showConfirmButton: true,
+        position: 'center',
+    
+})
+  }
+  function info() {
+    Swal.fire({
+        title: 'Info',
+        toast: true,
+        text: 'In order to win you must collect all of the diamonds and go to the teleport located in the bottom left corner. To move press one of the arrow keys.',
+        showConfirmButton: true,
+        position: 'center',
+    
+})
+  }
+  function winaleart() {
+    Swal.fire({
+        title: 'You won',
+        text: 'Thank you for playing'
+        
+  })}

@@ -104,6 +104,10 @@ body {
     color: #cbdbfc;
     line-height: var(--block-size)
 }
+.icons{
+    text-align: center;
+    justify-self: center;
+}
 .info{
     height: 4em;
     width: 4em;
@@ -119,7 +123,48 @@ body {
     justify-content: center;
     cursor: pointer;
     opacity: 0.7;
+    text-align: center;
   }
+  .info:nth-of-type(2){
+    right: 6em;
+  }
+
+  .info:nth-of-type(3),.info:nth-of-type(4){
+    right: 11em;
+    text-align: center;
+  
+  }
+  .info p{
+    color: var(--clr-neon);
+    font-size: 2.5em;
+    text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em var(--clr-neon);
+    font-weight: 600;
+  }
+  .info:hover{
+    opacity: 1;
+    transition: 250ms ease;
+  }
+  #play{
+    display: none;
+  }
+  #up{
+    display: block;
+    color:var(--clr-neon);
+    font-size: 2em;
+    text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em var(--clr-neon);
+    position: absolute;
+    top: 0.3em;
+    right: 0.35em;
+  }
+  #off{
+    font-size: 2em;
+    color:var(--clr-neon);
+    text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em var(--clr-neon);
+    position: absolute;
+    top: 0.3em;
+    right: 0.35em;
+  }
+  
 .bye {
     animation: 1s linear teleport;
     animation-fill-mode: forwards;

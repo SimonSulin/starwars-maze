@@ -5,6 +5,12 @@
     <link rel="shortcut icon" type="image/png" href="ico/favicon.png" />
     <link href="https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap"
+        rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>STAR WARS MAZE</title>
@@ -21,11 +27,12 @@
         <div class="info1"></div>
     </div>
 
-</div>    <div class="icons">
-        <div class="info">
+</div>    
+    <div class="icons">
+        <div class="info" onclick="info()">
             <p>i</p>
         </div>
-        <div class="info" id="copy">
+        <div class="info" onclick="Sweetaleart()" id="copy">
             <p>&copy;</p>
         </div>
         <div class="info" id="play" onclick="stopSong()"><span id="up" class="material-icons">volume_up</span></div>
@@ -34,5 +41,6 @@
             
         </div>
 <script src="js/maze.js"></script>
+<script src="js/sweetaleartcode.js"></script>
 </body>
 </html>
