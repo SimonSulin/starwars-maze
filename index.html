@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+ <html>
+   <head>
+    <meta charset="UTF-8" />
+    <link rel="shortcut icon" type="image/png" href="ico/favicon.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>STAR WARS MAZE</title>
+  </head>
+  <body> 
+      <div class="frame">
+    <div class="header">
+        <div class="help">Keys: ← → ↑ ↓</div>
+        <div class="diamond-count"></div>
+        <div class="block diamond"></div>
+    </div>
+    <div class="board"></div>
+    <div class="footer">
+        <div class="info1"></div>
+    </div>
+
+</div>    <div class="icons">
+        <div class="info">
+            <p>i</p>
+        </div>
+        <div class="info" id="copy">
+            <p>&copy;</p>
+        </div>
+        <div class="info" id="play" onclick="stopSong()"><span id="up" class="material-icons">volume_up</span></div>
+        <div class="info" id="pause" onclick="playSong()"><span id="off" class="material-icons">volume_off</span>
+            
+            
+        </div>
+<script src="js/maze.js"></script>
+</body>
+</html>
