@@ -1,2 +1,1 @@
-# starwars-maze
-maze
+https://simonsulin.github.io/starwars-maze/
