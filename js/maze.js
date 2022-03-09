@@ -171,6 +171,7 @@ const changePlayerPos = (direction) => {
                 bag++
                 diamond_sound.pause();
                 diamond_sound.play();
+
                 
             }
             
@@ -184,6 +185,7 @@ let moveSound = new Audio('audio/move.mp3');
 let teleport = new Audio('audio/teleport.mp3');
 let diamond_sound=new Audio('audio/diamond.wav')
 moveSound.volume = 0.5;
+diamond_sound.volume = 0.5;
 function playSong() {
 
     audio.loop = true;
@@ -213,7 +215,7 @@ function playSong() {
     Swal.fire({
         title: 'Info',
         toast: true,
-        text: 'In order to win you must collect all of the diamonds and go to the teleport located in the bottom left corner. To move press one of the arrow keys.',
+        text: 'In order to win you must collect all of the diamonds and go to the teleport located in the bottom right corner. To move press one of the arrow keys.',
         showConfirmButton: true,
         position: 'center',
     

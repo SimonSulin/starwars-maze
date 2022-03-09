@@ -135,9 +135,9 @@ body {
   
   }
   .info p{
-    color: var(--clr-neon);
+    color: rgba(255, 255, 255, 0.8);
     font-size: 2.5em;
-    text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em var(--clr-neon);
+    text-shadow: 0 0 0.125em rgba(255, 255, 255, 0.3), 0 0 0.45em var(--clr-neon);
     font-weight: 600;
   }
   .info:hover{
@@ -149,7 +149,7 @@ body {
   }
   #up{
     display: block;
-    color:var(--clr-neon);
+    color: rgba(255, 255, 255, 0.8);
     font-size: 2em;
     text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em var(--clr-neon);
     position: absolute;
@@ -158,7 +158,7 @@ body {
   }
   #off{
     font-size: 2em;
-    color:var(--clr-neon);
+    color: rgba(255, 255, 255, 0.8);
     text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em var(--clr-neon);
     position: absolute;
     top: 0.3em;
